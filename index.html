@@ -14,11 +14,13 @@
 
         /* Header Section Styling */
         .header {
-            background-color: #007bff;
-            padding: 60px;
-            color: white;
-            text-align: center;
-        }
+    background-color: #5b5ddb; /* Set background to grey */
+    padding: 30px 20px; /* Reduced padding to squeeze height */
+    color: #fffb99; /* Update text color */
+    text-align: center;
+}
+
+
 
         .header h1 {
             font-size: 3rem;
@@ -44,18 +46,23 @@
         .cta-button:hover {
             background-color: #f8f9fa;
         }
+        .logo {
+            max-width: 200px; /* Adjust the logo size as needed */
+            height: auto;
+        }
+
 
         /* Image Section */
         .image-section {
             text-align: center;
             padding: 40px 0;
         }
-
         .image-section img {
-            max-width: 100%;
+            width: 120%; /* Adjusted width */
+            max-width: 1000px; /* Sets a max width */
             height: auto;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Stats Section */
@@ -142,35 +149,75 @@
         .footer p {
             margin: 0;
         }
+    /* Testimonials Section */
+        .testimonials-section {
+            padding: 50px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .testimonials-section h2 {
+            font-size: 2rem;
+            color:#007bff;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-card {
+            display: inline-block;
+            width: 30%;
+            background-color: #007bff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .testimonial-card p {
+            font-size: 1rem;
+            color:#fffb99;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .testimonial-card h4 {
+            font-size: 1rem;
+            color: #0d2cff;
+            font-weight: bold;
+            text-align: right;
+        }
 
     </style>
 </head>
 <body>
-
-    <!-- Header Section -->
+<!-- Header Section -->
     <div class="header">
-        <h1>LoanLynk</h1>
-        <p>Find, Compare, and Apply for the Best Loan Offers with Ease</p>
+        <img src="loanlynk_logo.png" alt="LoanLynk Logo" class="logo">
+        <p>Find, Compare, and Apply for the Best Loan with Ease</p>
         <a href="loan-comparison.html" class="cta-button">Compare Loans Now</a>
     </div>
 
+    <!-- Header Section -->
+    
+
     <!-- Image Section -->
     <div class="image-section">
-        <img src="loanlynk_cover.jpeg" alt="Happy Customers Comparing Loans">
+        <img src="Loan_lynk_cover.jpg" alt="Happy Customers Comparing Loans">
     </div>
 
     <!-- Statistics Section -->
     <div class="stats-section">
         <div class="stat-box">
-            <h2>50+</h2>
+            <h2>10+</h2>
             <p>Banks and Financial Institutions</p>
         </div>
         <div class="stat-box">
-            <h2>5 Million+</h2>
-            <p>Happy Customers</p>
+            <h2>Quick </h2>
+            <p>Chatbot Assistance</p>
         </div>
         <div class="stat-box">
-            <h2>100%</h2>
+            <h2>Full</h2>
             <p>Paperless and Secure Process</p>
         </div>
     </div>
@@ -196,6 +243,23 @@
     </div>
 
     <!-- Footer Section -->
+    
+    <!-- Testimonials Section -->
+    <div class="testimonials-section">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-card">
+            <p>"LoanLynk helped me find the best loan options with ease! The process was smooth and saved me so much time."</p>
+            <h4>- Anjali Verma</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"I was able to secure an education loan at a fantastic rate thanks to LoanLynk's comparison tool. Highly recommended!"</p>
+            <h4>- Rahul Mehta</h4>
+        </div>
+        <div class="testimonial-card">
+            <p>"The platform is user-friendly and transparent. I felt confident making my loan decision through LoanLynk."</p>
+            <h4>- Priya Singh</h4>
+        </div>
+    </div>
     <div class="footer">
         <p>&copy; 2024 LoanLynk. All Rights Reserved.</p>
     </div>
