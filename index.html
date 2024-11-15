@@ -14,52 +14,57 @@
 
         /* Header Section Styling */
         .header {
-    background-color: #5b5ddb; /* Set background to grey */
-    padding: 30px 20px; /* Reduced padding to squeeze height */
-    color: #fffb99; /* Update text color */
-    text-align: center;
-}
-
-
+            background-color: #5b5ddb;
+            padding: 20px;
+            color: #fffb99;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
         .header h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin: 0;
+            display: inline-block;
+        }
+
+        .header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .header nav {
+            margin-top: 15px;
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .header nav a:hover {
+            background-color: #fffb99;
+            color: #5b5ddb;
         }
 
         .header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            margin-bottom: 30px;
+            margin: 10px 0 20px;
         }
-
-        .cta-button {
-            background-color: white;
-            color: #007bff;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .cta-button:hover {
-            background-color: #f8f9fa;
-        }
-        .logo {
-            max-width: 200px; /* Adjust the logo size as needed */
-            height: auto;
-        }
-
 
         /* Image Section */
         .image-section {
             text-align: center;
             padding: 40px 0;
         }
+
         .image-section img {
-            width: 120%; /* Adjusted width */
-            max-width: 1000px; /* Sets a max width */
+            width: 100%;
+            max-width: 1000px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -93,48 +98,121 @@
             color: #555;
         }
 
-        /* Featured Loans Section */
+        /* Loans Section */
         .loans-section {
-            padding: 50px;
+            padding: 50px 20px;
+            background-color: #f8f9fa;
             text-align: center;
         }
 
         .loans-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        .loan-offers-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
 
         .loan-card {
-            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
             width: 30%;
-            background-color: white;
+            min-width: 250px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .loan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .loan-header {
+            padding: 10px 0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .loan-details p {
+            font-size: 1.1rem;
+            color: #555;
+            margin: 0;
+        }
+
+        .loan-action {
+            margin-top: 20px;
+        }
+
+        .apply-button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .apply-button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .loan-card {
+                width: 100%;
+            }
+        }
+
+        /* Customer Reviews Section */
+        .reviews-section {
+            padding: 50px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .reviews-section h2 {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        .review-card {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             padding: 20px;
             margin: 10px;
-            border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 30%;
+            display: inline-block;
             vertical-align: top;
         }
 
-        .loan-card h3 {
-            font-size: 1.5rem;
-            color: #007bff;
-        }
-
-        .loan-card p {
+        .review-card p {
             font-size: 1rem;
-            margin-bottom: 10px;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
 
-        .loan-card .apply-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .loan-card .apply-button:hover {
-            background-color: #0056b3;
+        .review-card h4 {
+            font-size: 1rem;
+            color: #007bff;
+            font-weight: bold;
+            text-align: right;
         }
 
         /* Footer Section */
@@ -146,60 +224,41 @@
             margin-top: 40px;
         }
 
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
         .footer p {
-            margin: 0;
+            margin: 10px 0;
+            color: #ddd;
         }
-    /* Testimonials Section */
-        .testimonials-section {
-            padding: 50px 20px;
-            background-color: #ffffff;
-            text-align: center;
-        }
-
-        .testimonials-section h2 {
-            font-size: 2rem;
-            color:#007bff;
-            margin-bottom: 30px;
-        }
-
-        .testimonial-card {
-            display: inline-block;
-            width: 30%;
-            background-color: #007bff;
-            padding: 20px;
-            margin: 10px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: left;
-            vertical-align: top;
-        }
-
-        .testimonial-card p {
-            font-size: 1rem;
-            color:#fffb99;
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-
-        .testimonial-card h4 {
-            font-size: 1rem;
-            color: #0d2cff;
-            font-weight: bold;
-            text-align: right;
-        }
-
     </style>
 </head>
 <body>
-<!-- Header Section -->
-    <div class="header">
-        <img src="loanlynk_logo.png" alt="LoanLynk Logo" class="logo">
-        <p>Find, Compare, and Apply for the Best Loan with Ease</p>
-        <a href="loan-comparison.html" class="cta-button">Compare Loans Now</a>
-    </div>
 
     <!-- Header Section -->
-    
+    <div class="header">
+        <img src="loanlynk_logo.png" alt="LoanLynk Logo">
+        <h1>One stop solution for all Loans</h1>
+        <nav>
+            <a href="about-us.html">About Us</a>
+            <a href="vision.html">Vision</a>
+            <a href="loan-comparison.html">Compare Loans</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </div>
 
     <!-- Image Section -->
     <div class="image-section">
@@ -213,7 +272,7 @@
             <p>Banks and Financial Institutions</p>
         </div>
         <div class="stat-box">
-            <h2>Quick </h2>
+            <h2>Quick</h2>
             <p>Chatbot Assistance</p>
         </div>
         <div class="stat-box">
@@ -225,42 +284,71 @@
     <!-- Featured Loans Section -->
     <div class="loans-section">
         <h2>Trending Loan Offers</h2>
-        <div class="loan-card">
-            <h3>Personal Loan - SBI</h3>
-            <p>Get personal loans up to ₹20 Lakhs at a competitive interest rate of 9.95%.</p>
-            <a href="#" class="apply-button">Apply Now</a>
-        </div>
-        <div class="loan-card">
-            <h3>Education Loan - PNB</h3>
-            <p>Finance your education with loans up to ₹15 Lakhs at 9.45% interest.</p>
-            <a href="#" class="apply-button">Apply Now</a>
-        </div>
-        <div class="loan-card">
-            <h3>Home Loan - HDFC</h3>
-            <p>Secure your dream home with loans up to ₹50 Lakhs at a starting interest rate of 8.50%.</p>
-            <a href="#" class="apply-button">Apply Now</a>
+        <div class="loan-offers-container">
+            <!-- Personal Loan -->
+            <div class="loan-card">
+                <div class="loan-header personal-loan">
+                    <h3>Personal Loan - SBI</h3>
+                </div>
+                <div class="loan-details">
+                    <p>Get personal loans up to <strong>₹20 Lakhs</strong> at a competitive interest rate of <strong>9.95%</strong>.</p>
+                </div>
+                <div class="loan-action">
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Education Loan -->
+            <div class="loan-card">
+                <div class="loan-header education-loan">
+                    <h3>Education Loan - PNB</h3>
+                </div>
+                <div class="loan-details">
+                    <p>Finance your education with loans up to <strong>₹15 Lakhs</strong> at <strong>9.45%</strong> interest.</p>
+                </div>
+                <div class="loan-action">
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Home Loan -->
+            <div class="loan-card">
+                <div class="loan-header home-loan">
+                    <h3>Home Loan - HDFC</h3>
+                </div>
+                <div class="loan-details">
+                    <p>Secure your dream home with loans up to <strong>₹50 Lakhs</strong> at a starting interest rate of <strong>8.50%</strong>.</p>
+                </div>
+                <div class="loan-action">
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Footer Section -->
-    
-    <!-- Testimonials Section -->
-    <div class="testimonials-section">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-card">
+    <!-- Customer Reviews Section -->
+    <div class="reviews-section">
+        <h2>Customer Reviews</h2>
+        <div class="review-card">
             <p>"LoanLynk helped me find the best loan options with ease! The process was smooth and saved me so much time."</p>
             <h4>- Anjali Verma</h4>
         </div>
-        <div class="testimonial-card">
+        <div class="review-card">
             <p>"I was able to secure an education loan at a fantastic rate thanks to LoanLynk's comparison tool. Highly recommended!"</p>
             <h4>- Rahul Mehta</h4>
         </div>
-        <div class="testimonial-card">
+        <div class="review-card">
             <p>"The platform is user-friendly and transparent. I felt confident making my loan decision through LoanLynk."</p>
             <h4>- Priya Singh</h4>
         </div>
     </div>
-    <div class="footer">
+
+    <!-- Footer Section -->
+    <div id="contact" class="footer">
+        <h3>Contact Us</h3>
+        <a href="mailto:support@loanlynk.com">Email: support@loanlynk.com</a><br>
+        <a href="https://www.instagram.com/loan.lynk" target="_blank">Instagram</a><br>
+        <p>Call us: +91 99999 88888</p>
         <p>&copy; 2024 LoanLynk. All Rights Reserved.</p>
     </div>
 

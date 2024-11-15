@@ -12,7 +12,7 @@
             padding: 20px;
         }
 
-        /* Header Section Styling */
+        /* Header Section */
         .header {
             text-align: center;
             margin-bottom: 40px;
@@ -23,46 +23,50 @@
         }
 
         .description {
-            text-align: center;
             margin-bottom: 20px;
             font-size: 1.1rem;
         }
 
-        /* Table Styling */
-        .comparison-table {
-            width: 100%;
-            max-width: 900px;
+        /* Comparison Section Styling */
+        .comparison-container {
+            max-width: 1200px;
             margin: 0 auto;
-            border-collapse: collapse;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
         }
 
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
+        .header-box {
             background-color: #007bff;
             color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
             text-align: center;
         }
 
-        td {
+        .box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 1rem;
             text-align: center;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        tr:hover {
-            background-color: #f1f1f1;
+        .box.feature {
+            text-align: left;
+            color: #495057;
+            font-weight: bold;
         }
 
         .apply-button {
             background-color: #007bff;
             color: white;
-            padding: 10px 15px;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             display: inline-block;
@@ -72,27 +76,117 @@
         .apply-button:hover {
             background-color: #0056b3;
         }
-
-        /* Bullet Point Explanation Styling */
-        .bullet-points {
-            text-align: left;
+        .chatbot-section {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        ul {
-            list-style-type: square;
-            margin: 0;
-            padding: 0;
-        }
-
-        ul li {
-            padding: 5px 0;
-        }
-
-        .comparison-section {
-            text-align: left;
+        .chatbot-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             margin-bottom: 20px;
         }
+
+        .chatbot-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #007bff;
+        }
+
+        .chatbot-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        .chat-messages {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .chat-messages div {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages div.question {
+            align-items: flex-end;
+        }
+
+        .chat-messages div.question span {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 10px;
+            text-align: right;
+            max-width: 75%;
+            word-wrap: break-word;
+        }
+
+        .chat-messages div.answer span {
+            background-color: #e9ecef;
+            color: #333;
+            padding: 10px;
+            border-radius: 10px 10px 10px 0;
+            text-align: left;
+            max-width: 75%;
+            word-wrap: break-word;
+        }
+
+        .chatbot-footer {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .chatbot-footer input {
+            flex: 1;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .chatbot-footer button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chatbot-footer button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .chatbot-header h2 {
+                font-size: 1.2rem;
+            }
+
+            .chatbot-footer input {
+                font-size: 0.9rem;
+            }
+        }
     </style>
+    
 </head>
 <body>
 
@@ -102,60 +196,163 @@
         <p class="description">Review and compare the best education loan options from top banks.</p>
     </div>
 
-    <!-- Explanation Section -->
-    <div class="comparison-section">
-        <h3>Details to Consider When Choosing an Education Loan</h3>
-        <ul>
-            <li>Loan Amount: The maximum amount you can borrow based on the bank's policy.</li>
-            <li>Interest Rate: The percentage charged by the bank, which can be fixed or floating.</li>
-            <li>Repayment Tenure: The period over which you repay the loan (typically 15 years).</li>
-            <li>Processing Fees: Whether the bank charges an application or processing fee.</li>
-            <li>Prepayment Penalty: Any charges if you pay off the loan before the term ends.</li>
-        </ul>
+    <!-- Comparison Section -->
+    <div class="comparison-container">
+        <!-- Headers -->
+        <div class="box feature">Features</div>
+        <div class="header-box">PNB Pratibha Education Loan</div>
+        <div class="header-box">SBI Scholar Loan</div>
+        <div class="header-box">HDFC Education Loan</div>
+
+        <!-- Rows -->
+        <div class="box feature">Loan Amount</div>
+        <div class="box">Up to ₹15 Lakhs</div>
+        <div class="box">Up to ₹20 Lakhs</div>
+        <div class="box">₹2 to ₹25 Lakhs</div>
+
+        <div class="box feature">Interest Rate</div>
+        <div class="box">9.45%</div>
+        <div class="box">7.95% (Floating)</div>
+        <div class="box">8% - 10.5%</div>
+
+        <div class="box feature">Repayment Period</div>
+        <div class="box">15 years</div>
+        <div class="box">15 years</div>
+        <div class="box">7 years</div>
+
+        <div class="box feature">Processing Fee</div>
+        <div class="box">Nil</div>
+        <div class="box">Nil</div>
+        <div class="box">Zero Processing Fees</div>
+
+        <div class="box feature">Collateral</div>
+        <div class="box">Not Required</div>
+        <div class="box">Not Required</div>
+        <div class="box">Optional (FD or Property)</div>
+
+        <div class="box feature">Prepayment Charges</div>
+        <div class="box">None</div>
+        <div class="box">None</div>
+        <div class="box">None</div>
+
+        <div class="box feature">Moratorium Period</div>
+        <div class="box">Available</div>
+        <div class="box">Available</div>
+        <div class="box">Available with Terms</div>
+
+        <div class="box feature">Tax Benefits</div>
+        <div class="box">Yes</div>
+        <div class="box">Section 80E Exemptions</div>
+        <div class="box">Yes</div>
+
+        <div class="box feature">Eligibility</div>
+        <div class="box">Admission Letter</div>
+        <div class="box">Admission Letter</div>
+        <div class="box">Admit Letter</div>
+
+        <div class="box feature">Loan Coverage</div>
+        <div class="box">Tuition, Books, Travel</div>
+        <div class="box">Tuition, Books, Laptop</div>
+        <div class="box">Tuition, Hostel, Other Fees</div>
+
+        <div class="box feature">Fixed Interest Rate</div>
+        <div class="box">No</div>
+        <div class="box">No</div>
+        <div class="box">Yes</div>
+
+        <div class="box feature">Approval Time</div>
+        <div class="box">5-7 Days</div>
+        <div class="box">3-5 Days</div>
+        <div class="box">3-7 Days</div>
+
+        <div class="box feature">Extra Benefits</div>
+        <div class="box">Insurance Cover</div>
+        <div class="box">Tax Benefits</div>
+        <div class="box">Flexible EMI Options</div>
+
+        <div class="box feature">Loan for Abroad Studies</div>
+        <div class="box">Yes</div>
+        <div class="box">Yes</div>
+        <div class="box">Yes</div>
+
+        <div class="box feature">Loan Disbursement</div>
+        <div class="box">Direct to Institution</div>
+        <div class="box">Direct to Institution</div>
+        <div class="box">Direct to Institution</div>
+
+        <div class="box feature">Customer Support</div>
+        <div class="box">24/7</div>
+        <div class="box">24/7</div>
+        <div class="box">24/7</div>
+
+        <div class="box feature">Apply Now</div>
+        <div class="box"><a href="#" class="apply-button">Apply Now</a></div>
+        <div class="box"><a href="#" class="apply-button">Apply Now</a></div>
+        <div class="box"><a href="#" class="apply-button">Apply Now</a></div>
+    </div>
+    <div class="chatbot-section">
+        <div class="chatbot-header">
+            <img src="chatbotlogo.jpg" alt="Chatbot Icon">
+            <h2>LoanLynk Assistance</h2>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="answer">
+                <span>Hello! I’m here to help with loan comparisons and queries. Ask me anything!</span>
+            </div>
+        </div>
+        <div class="chatbot-footer">
+            <input type="text" id="userInput" placeholder="Type your question here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
     </div>
 
-    <!-- Comparison Table -->
-    <table class="comparison-table">
-        <tr>
-            <th>Loan Provider</th>
-            <th>Loan Amount</th>
-            <th>Interest Rate</th>
-            <th>Repayment Period</th>
-            <th>Processing Fee</th>
-            <th>Features</th>
-            <th>Apply Now</th>
-        </tr>
-        <tr>
-            <td>PNB Pratibha Education Loan</td>
-            <td>Up to ₹15 Lakhs</td>
-            <td>9.45% <br><small>(with rebates for girl students and regular interest payment)</small></td>
-            <td>15 years</td>
-            <td>Nil</td>
-            <td class="bullet-points">
-                <ul>
-                    <li>No prepayment charges</li>
-                    <li>Covers tuition fees, books, travel</li>
-                    <li>Insurance cover (optional)</li>
-                </ul>
-            </td>
-            <td><a href="#" class="apply-button">Apply</a></td>
-        </tr>
-        <tr>
-            <td>SBI Scholar Loan</td>
-            <td>Up to ₹20 Lakhs</td>
-            <td>7.95% (floating)</td>
-            <td>15 years</td>
-            <td>Nil</td>
-            <td class="bullet-points">
-                <ul>
-                    <li>No collateral required</li>
-                    <li>Interest tax exemption under Section 80E</li>
-                    <li>Coverage for exchange programs, laptop purchases</li>
-                </ul>
-            </td>
-            <td><a href="#" class="apply-button">Apply</a></td>
-        </tr>
-    </table>
+    <!-- JavaScript for Chatbot -->
+    <script>
+        const chatMessages = document.getElementById('chatMessages');
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const userMessage = userInput.value;
+
+            if (userMessage.trim()) {
+                // Display user question
+                const userDiv = document.createElement('div');
+                userDiv.className = 'question';
+                userDiv.innerHTML = `<span>${userMessage}</span>`;
+                chatMessages.appendChild(userDiv);
+
+                // Clear input
+                userInput.value = '';
+
+                // Generate bot response
+                const botDiv = document.createElement('div');
+                botDiv.className = 'answer';
+                botDiv.innerHTML = `<span>${generateBotResponse(userMessage)}</span>`;
+                chatMessages.appendChild(botDiv);
+
+                // Scroll to the bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        function generateBotResponse(message) {
+            const lowerMessage = message.toLowerCase();
+
+            if (lowerMessage.includes('loan')) {
+                return 'We compare education loans from PNB, SBI, and HDFC. What specific details would you like to know?';
+            } else if (lowerMessage.includes('interest')) {
+                return 'Here are the interest rates: PNB - 9.45%, SBI - 7.95%, HDFC - 8% to 10.5%. Let me know if you want more details!';
+            } else if (lowerMessage.includes('repayment')) {
+                return 'Repayment periods are: PNB - 15 years, SBI - 15 years, HDFC - 7 years. Need help choosing?';
+            } else if (lowerMessage.includes('processing fee')) {
+                return 'Processing fees: PNB - Nil, SBI - Nil, HDFC - Zero fees. Would you like to know about other charges?';
+            } else if (lowerMessage.includes('collateral')) {
+                return 'Collateral requirements: PNB - None, SBI - None, HDFC - Optional (FD or Residential Property). Need more help?';
+            } else {
+                return 'I can assist with loan comparisons, interest rates, repayment periods, and more. Please refine your query!';
+            }
+        }
+    </script>
 
 </body>
 </html>
